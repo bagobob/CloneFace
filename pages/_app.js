@@ -1,6 +1,5 @@
 import '@/styles/globals.css'
 import Head from 'next/head';
-import { SessionProvider } from "next-auth/react"
 
 export default function App({ Component, pageProps,session }) {
   return (
@@ -16,9 +15,7 @@ export default function App({ Component, pageProps,session }) {
       </Head>
       
       <main>
-        <SessionProvider session={session}>
           <Component {...pageProps} />
-        </SessionProvider>
       </main>
     </>
 
