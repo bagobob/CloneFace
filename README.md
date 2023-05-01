@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is a clone of facebook made with Next JS, Next-Auth with facebook provider, firebase storage and firebase firestore database
 
-## Getting Started
+![Homepage](./screenshot.png)
 
-First, run the development server:
+![LoginPage](./login-page.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## For The Authentication with Next Auth , you need to :
+- Create an Facebook app  [here](https://developers.facebook.com/)
+- You take the client Id and client secret and put it in your .env.local file
+- You add the nextauth url (the localhost url in development) and the next auth secret for the jwt token in your .env.local file as well
+- The variables you must have are :
+    - FACEBOOK_CLIENT_ID
+    - FACEBOOK_CLIENT_SECRET
+    - NEXTAUTH_URL
+    - NEXTAUTH_SECRET
+- In your facebook app you must add a product, the Facebook Login 
+- You must add this url : `https://next-auth-example.vercel.app/api/auth/callback/facebook`in your Facebook Login parameter under Valid OAuth redirect URIs
+- And you must activate for the `public_profile` the advanced access
+- In the Basic parameter of your application you must add a valid URL of Privacy Policy and of Data Deletion. You can deploy your app on vercel before adding authentication and then add the url of your app deployed in these parts.
+ 
+## For the Database and the storage
+- Create a project on firebase
+- Find the parameter of your project and add it to a file call firebase.js in the root folder of your app
+- configure this file
+- Add the environment variable to your .env file
+- and run the project
